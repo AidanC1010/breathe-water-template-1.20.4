@@ -11,13 +11,15 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class ModItemGroups {
-    public static final ItemGroup TURTLE_GROUP = Registry.register(Registries.ITEM_GROUP, new Identifier(BreatheWater.MOD_ID, "Turtle Mod"),
+    public static final ItemGroup TURTLE_GROUP = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(BreatheWater.MOD_ID, "turtle"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.turtle"))
-            .icon(() -> new ItemStack(ModItems.CGlass)).entries((displayContext, entries) -> {
-                entries.add(ModItems.CGlass);
-                entries.add(ModItems.Plastic);
+                .icon(() -> new ItemStack(ModItems.CGlass)).entries((displayContext, entries) -> {
+                    entries.add(ModItems.CGlass);
+                    entries.add(ModItems.Plastic);
 
-            }).build());
+                }).build());
+
     public static void registerItemGroups(){
         BreatheWater.LOGGER.info("Registering Item Groups for "+BreatheWater.MOD_ID);
 
